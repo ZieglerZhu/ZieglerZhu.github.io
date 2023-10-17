@@ -1,32 +1,38 @@
-baseurl: https://example.com
-languageCode: en-us
+# copyright 会影响footer中
+baseurl: https://ZieglerZhu.github.io
+languageCode: zh-cn
 theme: hugo-theme-stack
 paginate: 5
-title: Example Site
-copyright: Example Person
+title: Ziegler's Blog
+copyright: ZieglerZhu
 
+# title 会同时影响sidebar中的名字及网页标题
+## 多语言模式，需要在对应md前添加语言才会进行分类，
+## 未添加语言的会被放在默认语言下
+## e.g. chinese-test.zh-cn.md 该文档会被视为中文，放在语言项选择中文后
 languages:
     en:
         languageName: English
-        title: Example Site
-        weight: 1
-        params:
-            description: Example description
-    zh-cn:
-        languageName: 中文
-        title: 演示站点
+        title: Ziegler
         weight: 2
         params:
-            description: 演示说明
-    ar:
-        languageName: عربي
-        languagedirection: rtl
-        title: موقع تجريبي
-        weight: 3
+            description: English Site
+    zh-cn:
+        languageName: 中文
+        title: Ziegler
+        weight: 1
         params:
-            description: وصف تجريبي
+            description: Chinese Site
+#    ar:
+#        languageName: عربي
+#        languagedirection: rtl
+#        title: موقع تجريبي
+#        weight: 3
+#        params:
+#            description: وصف تجريبي
 
 # Change it to your Disqus shortname before using
+# For the comment function at the bottom of each post
 disqusShortname: hugo-theme-stack
 
 # GA Tracking ID
@@ -38,7 +44,7 @@ DefaultContentLanguage: zh-cn
 
 # Set hasCJKLanguage to true if DefaultContentLanguage is in [zh-cn ja ko]
 # This will make .Summary and .WordCount behave correctly for CJK languages.
-hasCJKLanguage: false
+hasCJKLanguage: true
 
 permalinks:
     post: /p/:slug/
@@ -49,6 +55,7 @@ params:
         - post
     featuredImageField: image
     rssFullContent: true
+    # 网页图标（标签栏使用）
     favicon:  # e.g.: favicon placed in `static/favicon.ico` of your site folder, then set this field to `/favicon.ico` (`/` is necessary)
 
     footer:
@@ -59,15 +66,21 @@ params:
         published: Jan 02, 2006
         lastUpdated: Jan 02, 2006 15:04 MST
 
+    # 影响左栏中相关资料
     sidebar:
-        emoji: 🍥
-        subtitle: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        # 头像下状态图标
+        emoji: ✨
+        # 头像下简介
+        subtitle: "May you, the beauty of the world, always shine."
+        # 头像
         avatar:
             enabled: true
             local: true
+            # 指themes/hugo-theme-stack下assets中的
             src: img/avatar.png
 
     article:
+        # 启动数学公式支持，也可在每篇文章header中标注以对单篇文章启动
         math: false
         toc: true
         readingTime: true
@@ -152,7 +165,9 @@ params:
         cusdis:
             host:
             id:
+    # 右边栏设置
     widgets:
+        # 主页右边栏
         homepage:
             - type: search
             - type: archives
@@ -164,6 +179,7 @@ params:
             - type: tag-cloud
               params:
                   limit: 10
+        # 文章页右边栏（toc = table of content 目录）
         page:
             - type: toc
 
@@ -200,18 +216,19 @@ params:
 menu:
     main: []
 
+    # 头像下的社交软件图标
     social:
         - identifier: github
           name: GitHub
-          url: https://github.com/CaiJimmy/hugo-theme-stack
+          url: https://github.com/ZieglerZhu
           params:
               icon: brand-github
 
-        - identifier: twitter
-          name: Twitter
-          url: https://twitter.com
-          params:
-              icon: brand-twitter
+#        - identifier: email
+#          name: email
+#          url: qirunzhu@gmail.com
+#          params:
+#              icon: messages
 
 related:
     includeNewer: true
