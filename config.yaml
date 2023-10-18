@@ -56,7 +56,7 @@ params:
     featuredImageField: image
     rssFullContent: true
     # 网页图标（标签栏使用）
-    favicon:  # e.g.: favicon placed in `static/favicon.ico` of your site folder, then set this field to `/favicon.ico` (`/` is necessary)
+    favicon: /favicon.png # e.g.: favicon placed in `static/favicon.ico` of your site folder, then set this field to `/favicon.ico` (`/` is necessary)
 
     footer:
         since: 2020
@@ -77,7 +77,8 @@ params:
             enabled: true
             local: true
             # 指themes/hugo-theme-stack下assets中的
-            src: img/avatar.png
+            # 在根目录下自建assets存放
+            src: img/favicon.png
 
     article:
         # 启动数学公式支持，也可在每篇文章header中标注以对单篇文章启动
